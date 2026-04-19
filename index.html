@@ -8,39 +8,18 @@
 </head>
 <body>
 
-    <div id="dragzone" draggable="true">
-        <img class="img" src="./img/ChatGPT Image 27_12_2025, 20_16_22.png" alt="minha_foto">
-        <p>dragzone</p>
+    <div class="drop1"> 
+        <div id="dragzone" draggable="true">
+            <img class="img" src="./img/ChatGPT Image 27_12_2025, 20_16_22.png" alt="minha_foto">
+            <p>dragzone</p>
+        </div>
+        <div class="drop2" id="drop2">
+            <h1>Arrasta um arquivo aqui</h1>
+            <img  alt="Image" class="file">
+        </div>
+        <div id = "dropzone">
+            <p>dropzone</p>
+        <script src="script.js" />
     </div>
-    <div id = "dropzone">
-        <p>dropzone</p>
-    <script>
-        let dragzone = document.getElementById("dragzone");
-        let dropzone = document.getElementById("dropzone");
-        dragzone.addEventListener("dragstart",  (e)=>
-        {
-            console.log("teste 1\n");
-            e.dataTransfer.setData("text/plain", e.target.id);
-            e.target.style.opacity = 0.5;
-        })
-        dragzone.addEventListener("dragzoneend", (e) =>
-        {
-            e.target.style.opacity = 1;
-        })
-
-        dropzone.addEventListener("dragover", (e)=>
-        {
-            e.preventDefault();
-            console.log("teste 2\n");
-        })
-        dropzone.addEventListener("drop", (e) =>
-        {
-            e.preventDefault();
-            const id = e.dataTransfer.getData("text/plain");
-            console.log(id);
-            const element = document.getElementById(id)
-            dropzone.appendChild(element);   
-        })
-    </script>
 </body>>
 </html>
